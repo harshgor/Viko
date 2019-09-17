@@ -1,0 +1,60 @@
+package main;
+import java.util.Scanner; 
+public class main {
+
+    public static void main(String[] args) {
+    
+        System.out.println("Enter height:");
+        Scanner in =new Scanner(System.in);
+        double height = in.nextDouble();
+        System.out.println("Enter Length:");
+        double length = in.nextDouble();
+          System.out.println("Enter x1 coordinate:");
+          double x1 = in.nextDouble();
+            System.out.println("Enter x2 coordinate:");
+            double x2 = in.nextDouble();
+            System.out.println("Enter y1 coordinate:");
+            double y1 = in.nextDouble();
+            System.out.println("Enter y2 coordinate:");
+            double y2 = in.nextDouble();
+        Rectangle r= new Rectangle();
+        r.height = height;
+        r.length = length;
+        r.x1 = x1;
+        r.x2 = x2;
+        r.y1 = y1;
+        r.y2 = y2;
+        System.out.println("Area Size:" +r.getAreasize());
+         System.out.println("Perimeter:" +r.getPerimeter());
+          System.out.println("Diagonal:" +r.getDiagonalLength()); 
+           System.out.println("Cross point Xcoordinate:" +r.getXPointCoordinate());
+            System.out.println("Cross point Ycoordinate:" +r.getYPointCoordinate());        
+    }
+    
+}
+import static java.lang.Math.sqrt;
+public class Rectangle {
+   public double length;
+   public double height;
+   public double x1,x2;
+   public double y1,y2;
+  
+  
+    public double getAreasize(){
+   
+        return height*length;
+   }
+   public double getPerimeter(){
+        return 2*(height*length);
+   }
+    public double getDiagonalLength(){ 
+         return sqrt(height*height+length*length);
+             }
+    public double getXPointCoordinate(){
+        return (x1*x2)/2;
+    }
+    public double getYPointCoordinate(){
+         return (y1*y2)/2;
+    }
+ }    
+
